@@ -1,0 +1,35 @@
+{
+  "courses": [
+    {
+      "id": "1",
+      "name": "React Basics",
+      "videoUrl": "https://www.youtube.com/embed/your-video-id",
+      "points": 50,
+      "status": "completed"
+    },
+    {
+      "id": "2",
+      "name": "Advanced JavaScript",
+      "videoUrl": "https://www.youtube.com/embed/your-video-id",
+      "points": 75,
+      "status": "completed"
+    },
+    {
+      "id": "3",
+      "name": "CSS Animations",
+      "videoUrl": "https://www.youtube.com/embed/your-video-id",
+      "points": 30,
+      "status": "yet to start"
+    }
+  ],
+  "user": {
+    "item": {
+      "item": {
+        "id": 1,
+        "totalPoints": 0
+      },
+      "totalPoints": 75
+    },
+    "totalPoints": 125
+  }
+}
