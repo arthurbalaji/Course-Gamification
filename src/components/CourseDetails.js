@@ -9,7 +9,7 @@ const CourseDetails = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/courses/${id}`)
+    fetch(`https://course-gamification.onrender.com/courses/${id}`)
       .then((res) => res.json())
       .then((data) => setCourse(data))
       .catch((err) => console.error(err));
@@ -18,20 +18,20 @@ const CourseDetails = () => {
   const handleComplete = () => {
     if (!course || course.status === "completed") return;
 
-    fetch(`http://localhost:5000/courses/${id}`, {
+    fetch(`https://course-gamification.onrender.com/courses/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ status: "completed" }),
     })
       .then(() => {
-        fetch("http://localhost:5000/courses")
+        fetch("https://course-gamification.onrender.com/courses")
           .then((res) => res.json())
           .then((courses) => {
             const completedPoints = courses
               .filter((c) => c.status === "completed")
               .reduce((sum, c) => sum + c.points, 0);
 
-            fetch("http://localhost:5000/user", {
+            fetch("https://course-gamification.onrender.com/user", {
               method: "PATCH",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ totalPoints: completedPoints }),

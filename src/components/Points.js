@@ -6,7 +6,7 @@ const Points = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:5000/user")
+    fetch("https://course-gamification.onrender.com/user")
       .then((res) => res.json())
       .then((data) => setUser(data))
       .catch((err) => console.error(err));

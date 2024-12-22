@@ -7,14 +7,14 @@ const Courses = () => {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/courses")
+    fetch("https://course-gamification.onrender.com/courses")
       .then((res) => res.json())
       .then((data) => setCourses(data))
       .catch((err) => console.error(err));
   }, []);
 
   const handleViewCourse = (id) => {
-    fetch(`http://localhost:5000/courses/${id}`, {
+    fetch(`https://course-gamification.onrender.com/courses/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ status: "in-progress" }),
